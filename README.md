@@ -1,4 +1,4 @@
 # 2-Bin Packing Visualization
 
-Application deployed:
+Application deployed here:
 https://dmitry-kiselev-1.github.io/bin-packing-visualization/
