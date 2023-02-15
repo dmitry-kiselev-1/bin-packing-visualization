@@ -1,8 +1,9 @@
-<div class="container">
-  <div *ngFor="let rectangle of packedRectangles" class="rectangle"
-       [style.width.px]="(rectangle?.width ?? 0)" [style.height.px]="(rectangle?.height ?? 0)"
-       [style.top.px]="containerHeight - (this.rectangle?.y ?? 0) - (this.rectangle?.height ?? 0)"
-       [style.left.px]="(rectangle?.x ?? 0)">
-    {{ rectangle?.width }}x{{ rectangle?.height }}
-  </div>
-</div>
+<svg width="50" height="80">
+  <rect *ngFor="let rect of rectangles; let i = index"
+        [attr.x]="positions[i].x"
+        [attr.y]="positions[i].y"
+        [attr.width]="rect?.width"
+        [attr.height]="rect?.height"
+        [attr.fill]="rect?.color"
+  />
+</svg>
