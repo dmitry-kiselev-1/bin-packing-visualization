@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor="let rectangle of packedRectangles" class="rectangle"
+       [style.width.px]="(rectangle?.width ?? 0)" [style.height.px]="(rectangle?.height ?? 0)"
+       [style.top.px]="containerHeight - (this.rectangle?.y ?? 0) - (this.rectangle?.height ?? 0)"
+       [style.left.px]="(rectangle?.x ?? 0)">
+    {{ rectangle?.width }}x{{ rectangle?.height }}
+  </div>
+</div>
