@@ -12,20 +12,29 @@
     </svg>
   </div>
   <div class="grid-item">
-    <input class="favorite styled-button"
-           type="button"
-           value="Pack and Visualize"
-           (click)="packAndVisualizeButtonClick()">
 
-    <select #algorithm (change)="selectAlgorithmChange(algorithm.selectedIndex)">
-      <option value="NextFitDecreasingHeightAlgorithm">Next-Fit Decreasing Height Algorithm</option>
-      <option value="OtherAmazingAlgorithm">Other Amazing Algorithm</option>
-    </select>
-
-    <textarea rows="20" cols="30"
-              [(ngModel)]="inputData" name="inputData">
-    </textarea>
-
+    <div class="flex-container">
+      <div>
+        <textarea rows="20" cols="30"
+                  [(ngModel)]="inputData" name="inputData">
+        </textarea>
+      </div>
+      <div>
+        <select #algorithm (change)="selectAlgorithmChange(algorithm.selectedIndex)">
+          <option value="NextFitDecreasingHeightAlgorithm">Next-Fit Decreasing Height Algorithm</option>
+          <option value="OtherAmazingAlgorithm">Other Amazing Algorithm</option>
+        </select>
+      </div>
+      <div>
+        <input class="favorite styled-button"
+               type="button"
+               value="<= Pack and Visualize"
+               (click)="packAndVisualizeButtonClick()">
+      </div>
+      <div>
+        <span class="error-message"> {{this.errorMessage}} </span>
+      </div>
+    </div>
     <!--{{inputData}}-->
   </div>
 </div>

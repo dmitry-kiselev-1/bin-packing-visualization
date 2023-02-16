@@ -11,6 +11,8 @@ import { Algorithm } from './algorithm.enum';
 })
 export class AppComponent {
 
+  errorMessage = "";
+
   inputData: string =
 `80 50
 20 5
@@ -40,7 +42,7 @@ export class AppComponent {
 
     for (const rectangle of rectangles) {
       if (rectangle.width > binWidth || rectangle.height > binHeight) {
-        alert(`Rectangle \n [${rectangle.width} ${rectangle.height}] \n too large for bin and will be ignored!`)
+        this.errorMessage = `Rectangle \n [${rectangle.width} ${rectangle.height}] \n too large for bin and will be ignored!`;
       }
 
       if (currentBinHeight + rectangle.height > binHeight) {
@@ -82,6 +84,7 @@ export class AppComponent {
   }
 
   packAndVisualizeButtonClick() {
+    this.errorMessage = "";
     this.readInputData();
     this.visualize(this.algorithm);
   }
@@ -110,7 +113,7 @@ export class AppComponent {
     this.rectangles = [...inputRectangles];
     }
     catch (e) {
-      alert('Wrong input data, please reload page to see example!')
+      this.errorMessage = 'Wrong input data, please reload page to see example!';
     }
   }
 
